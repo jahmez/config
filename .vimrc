@@ -1,4 +1,8 @@
 set nocompatible
+" Support 24-bit color in the terminal
+set termguicolors
+" Make sure syntax highlighting is active
+syntax on
 " Preferred of the default colorschemes
 " Some others include elflord, evening, and pablo
 colorscheme desert
@@ -6,12 +10,9 @@ colorscheme desert
 nnoremap <Leader>s :w<CR>
 " Custom shortcut to open netrw directory explorer
 " Modifies the new split panel to be reduced width
-nnoremap <Leader>f :Lexplore<CR>20<C-w><
+nnoremap <Leader>f :Lexplore<CR>15<C-w><
 " Custom shortcut to switch between vim windows
 nnoremap <Leader>w <C-w><C-w>
-" Always show tab line
-" Useful for seeing file name
-set showtabline=2
 " Tab completion for file related tasks
 set wildmenu
 set wildmode=list:longest,full
@@ -34,20 +35,20 @@ set smartindent
 " High search results and search incrementally
 set hlsearch
 set incsearch
-" Make sure syntax highlighting is active
-syntax on
 " Shorcut to exit Insert Mode
 inoremap jk <Esc>
-" Support 24-bit color in the terminal
-set termguicolors
 " Controls number of lines above/below cursor
 " Useful for keeping cursor reasonably centered
-set scrolloff=8
+set scrolloff=10
 " Use tree view for netrw directory browser
 let g:netrw_liststyle=3
 " Map F2 to open a file in a new tab
 nnoremap <F2> :tabnew<Space>
-          "\<C-R>=escape(input('File: '), ' \')<CR><CR>
+" Always show tab line
+" Useful for seeing file name
+set showtabline=2
 " Further tabline modifications for color
 highlight TabLineFill ctermfg=Cyan
 highlight TabLineSel ctermfg=Magenta ctermbg=Yellow
+" Ensure matching brackets are highlighted
+set showmatch
