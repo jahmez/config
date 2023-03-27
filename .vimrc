@@ -1,4 +1,7 @@
 set nocompatible
+" Preferred of the default colorschemes
+" Some others include elflord, evening, and pablo
+colorscheme desert
 " Custom shortcut for saving file
 nnoremap <Leader>s :w<CR>
 " Custom shortcut to open netrw directory explorer
@@ -12,9 +15,6 @@ set showtabline=2
 " Tab completion for file related tasks
 set wildmenu
 set wildmode=list:longest,full
-" Preferred of the default colorschemes
-" Some others include elflord, evening, and pablo
-colorscheme desert
 " Shows whitespace
 " set list
 " Uses Tab for auto-complete when in insert mode
@@ -48,4 +48,6 @@ let g:netrw_liststyle=3
 " Map F2 to open a file in a new tab
 nnoremap <F2> :tabnew<Space>
           "\<C-R>=escape(input('File: '), ' \')<CR><CR>
-
+" Further tabline modifications for color
+highlight TabLineFill ctermfg=Cyan
+highlight TabLineSel ctermfg=Magenta ctermbg=Yellow
